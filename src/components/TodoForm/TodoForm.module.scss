@@ -1,0 +1,25 @@
+.form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	&Input,
+	&Button {
+		width: 500px;
+		height: 50px;
+
+		border-radius: 10px;
+		padding: 0 10px;
+
+		font-size: 18px;
+	}
+
+	&Button {
+		width: 100px;
+
+		background: rgb(131, 58, 180);
+		background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 0.38147759103641454) 50%, rgba(252, 176, 69, 1) 100%);
+
+		cursor: pointer;
+	}
+}
