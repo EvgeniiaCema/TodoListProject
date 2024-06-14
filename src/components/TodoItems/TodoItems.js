@@ -87,7 +87,7 @@ export const TodoItem = ({ todo, setTodo }) => {
 									Edit
 								</button>
 								<button className={style.tasksItemTodoButtonFuncDelete} onClick={() => todoDelete(item.id)}>
-									Deleted
+									Delete
 								</button>
 							</div>
 						</div>
