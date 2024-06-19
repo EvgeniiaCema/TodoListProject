@@ -71,14 +71,27 @@ export const TodoItem = ({ todo, setTodo }) => {
 				<div className={style.tasksItem} key={item.id}>
 					{edit === item.id ? (
 						<div className={style.tasksItemForm}>
-							<input className={style.tasksItemFormInput} type="text" value={value} onChange={handlerInput} />{" "}
-							<button className={style.tasksItemFormButtonSave} onClick={() => saveEdit(item.id)}>
-								Save
-							</button>
+							<input className={style.tasksItemTodoTitle} type="text" value={value} onChange={handlerInput} />
+							<div className={style.tasksItemTodoButtonFunc}>
+								<button className={style.tasksItemTodoButtonFuncDone} onClick={() => todoDone(item.id)}>
+									Done
+								</button>
+								<button className={style.tasksItemFormButtonSave} onClick={() => saveEdit(item.id)}>
+									Save
+								</button>
+								<button className={style.tasksItemTodoButtonFuncDelete} onClick={() => todoDelete(item.id)}>
+									Delete !
+								</button>
+							</div>
 						</div>
 					) : (
 						<div className={style.tasksItemTodo}>
-							<div className={item.status ? style.tasksItemTodoDoneTitle : style.tasksItemTodoTitle}>{item.title}</div>
+							<input
+								className={item.status ? style.tasksItemTodoDoneTitle : style.tasksItemTodoTitle}
+								type="text"
+								value={item.title}
+								onChange={handlerInput}
+							/>
 							<div className={style.tasksItemTodoButtonFunc}>
 								<button className={style.tasksItemTodoButtonFuncDone} onClick={() => todoDone(item.id)}>
 									Done
@@ -87,7 +100,7 @@ export const TodoItem = ({ todo, setTodo }) => {
 									Edit
 								</button>
 								<button className={style.tasksItemTodoButtonFuncDelete} onClick={() => todoDelete(item.id)}>
-									Delete !
+									Delete
 								</button>
 							</div>
 						</div>
